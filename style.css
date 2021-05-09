@@ -1,6 +1,19 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, ::after, ::before { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+:root {
+  --svetle-fialova: #48418e;
+  --tmave-fialova: #25133d;
+  --bila: #fff;
+  --font: "Source Sans Pro", sans-serif;
+}
 
 /*
  BARVY
@@ -14,20 +27,138 @@ html { box-sizing: border-box; }
 */
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: #e5e5e5;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  background-color: #e5e5e5;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .obal {
-    width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
-    margin: 0 auto; /* pruh je na stránce vycentrovaný */
-    background: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
+  margin: 0 auto; /* pruh je na stránce vycentrovaný */
+  background: var(--bila);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
 /* ----- zde začni psát vlastní CSS ----- */
+
+h1 {
+  font-family: var(--font);
+  color: var(--bila);
+  font-size: 5rem;
+  font-weight: 400;
+  margin: unset;
+}
+
+.slogan {
+  font-family: var(--font);
+  color: var(--bila);
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.buttons {
+  font-family: var(--font);
+  color: var(--bila);
+  display: flex;
+  padding-top: 2rem;
+}
+
+.tlacitko {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-right: 15px;
+}
+.tlacitko:hover,
+.tlacitko:focus {
+  background-color: var(--bila);
+  color: var(--tmave-fialova);
+  cursor: pointer;
+}
+
+.horni-cast {
+  background-image: url(images/pozadi.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.left-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.right-box {
+  display: flex;
+  padding-top: 2rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  font-family: var(--font);
+  font-weight: 300;
+  color: var(--tmave-fialova);
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+}
+
+a:first-child {
+  font-weight: 700;
+}
+
+a:hover,
+a:focus {
+  background-color: var(--svetle-fialova);
+  color: var(--bila);
+}
+
+.dolni-cast {
+  display: flex;
+}
+
+.dolni-cast-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.article {
+  padding: 1rem;
+  font-weight: 700;
+  color: var(--tmave-fialova);
+  font-family: var(--font);
+}
+
+.paragraph {
+  text-align: center;
+  font-family: var(--font);
+  font-weight: 400;
+  color: var(--svetle-fialova);
+  margin: 0;
+}
+
+footer {
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: var(--bila);
+  background-color: var(--svetle-fialova);
+  text-align: center;
+  padding: 0.5rem;
+}
+
